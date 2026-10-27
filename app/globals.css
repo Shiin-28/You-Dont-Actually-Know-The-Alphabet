@@ -1,0 +1,57 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html,
+body {
+  height: 100%;
+  overflow: hidden;
+  background: #fff;
+  color: #000;
+  font-family: var(--font-bebas), "Bebas Neue", sans-serif;
+  user-select: none;
+  -webkit-user-select: none;
+}
+
+@layer utilities {
+  .shake-subtle {
+    animation: shakeSubtle 0.12s ease-in-out infinite;
+  }
+  .shake-hard {
+    animation: shakeHard 0.08s ease-in-out infinite;
+  }
+}
+
+@keyframes shakeSubtle {
+  0%, 100% { transform: translate(0, 0) rotate(0deg); }
+  20% { transform: translate(-3px, 2px) rotate(-0.3deg); }
+  40% { transform: translate(3px, -2px) rotate(0.3deg); }
+  60% { transform: translate(-2px, 3px) rotate(-0.2deg); }
+  80% { transform: translate(2px, -3px) rotate(0.2deg); }
+}
+
+@keyframes shakeHard {
+  0%, 100% { transform: translate(0, 0) rotate(0deg); }
+  15% { transform: translate(-8px, 5px) rotate(-0.8deg); }
+  30% { transform: translate(8px, -5px) rotate(0.8deg); }
+  45% { transform: translate(-7px, 7px) rotate(-0.5deg); }
+  60% { transform: translate(7px, -6px) rotate(0.6deg); }
+  75% { transform: translate(-5px, 4px) rotate(-0.4deg); }
+  90% { transform: translate(5px, -4px) rotate(0.4deg); }
+}
+
+@keyframes flashRed {
+  0%   { background-color: #fff; }
+  10%  { background-color: #ff0000; }
+  100% { background-color: #fff; }
+}
+
+.flash-red {
+  animation: flashRed 0.4s ease-out forwards;
+}
